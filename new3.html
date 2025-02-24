@@ -1,0 +1,270 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Happy Birthday</title>  
+    <style>  
+        body {  
+            margin: 0;  
+            overflow: hidden;  
+            background: linear-gradient(45deg, #ff4e50, #fc913a);  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            min-height: 100vh;  
+            font-family: 'Arial', sans-serif;  
+            color: white;  
+            transition: background 1s ease-in-out;  
+            padding: 20px;  
+        }  
+        .container {  
+            position: relative;  
+            width: 90%;  
+            max-width: 800px;  
+            height: 70vh;  
+            min-height: 500px;  
+            overflow: hidden;  
+            border-radius: 15px;  
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  
+        }  
+        .slides {  
+            display: flex;  
+            transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);  
+            width: 1100%;  
+            height: 100%;  
+        }  
+        .slide {  
+            width: 9.09%;  
+            height: 100%;  
+            flex-shrink: 0;  
+            display: flex;  
+            flex-direction: column;  
+            justify-content: center;  
+            align-items: center;  
+            position: relative;  
+            padding: 20px;  
+            box-sizing: border-box;  
+            opacity: 0;  
+            animation: fadeIn 0.5s forwards;  
+        }  
+        .slide img {  
+            width: auto;  
+            max-width: 100%;  
+            max-height: 55%;  
+            object-fit: contain;  
+            border-radius: 15px;  
+            filter: brightness(0.8);  
+            margin-bottom: 20px;  
+            animation: float 3s ease-in-out infinite;  
+        }  
+        .text {  
+            position: relative;  
+            background: rgba(255, 255, 255, 0.8);  
+            padding: 15px 25px;  
+            border-radius: 15px;  
+            font-size: clamp(16px, 2.5vw, 24px);  
+            font-weight: bold;  
+            text-align: center;  
+            animation: pulse 2s infinite, slideIn 1s ease-out;  
+            width: 90%;  
+            max-width: 600px;  
+            line-height: 1.4;  
+            margin-top: auto;  
+            margin-bottom: 10px;  
+            color: black;  
+        }  
+        @keyframes fadeIn {  
+            to { opacity: 1; }  
+        }  
+        @keyframes float {  
+            0%, 100% { transform: translateY(0); }  
+            50% { transform: translateY(-10px); }  
+        }  
+        @keyframes pulse {  
+            0% { transform: scale(1); }  
+            50% { transform: scale(1.05); }  
+            100% { transform: scale(1); }  
+        }  
+        @keyframes slideIn {  
+            from { transform: translateY(20px); opacity: 0; }  
+            to { transform: translateY(0); opacity: 1; }  
+        }  
+        .replay-btn {  
+            position: absolute;  
+            bottom: 90px;  
+            left: 50%;  
+            transform: translateX(-50%);  
+            padding: 12px 25px;  
+            background: #ff0080;  
+            color: white;  
+            font-size: 18px;  
+            border: none;  
+            border-radius: 25px;  
+            cursor: pointer;  
+            display: none;  
+            white-space: nowrap;  
+            animation: bounce 2s infinite;  
+        }  
+        @keyframes firecracker {
+    0% { opacity: 0.8; transform: translateY(0) scale(1); }
+    50% { opacity: 1; transform: translateY(-30px) scale(1.2); }
+    100% { opacity: 0; transform: translateY(-60px) scale(0.8); }
+}
+
+.firework-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* .firework {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('https://i.gifer.com/origin/84/84d0a1466fc9191646ff14dfb6f2eb38_w200.gif');
+    background-size: cover;
+    animation: firecracker 1.5s infinite;
+}
+
+.left-firework {
+    left: 5%;
+}
+
+.right-firework {
+    right: 5%;
+} */
+        @keyframes bounce {  
+            0%, 100% { transform: translateX(-50%) translateY(0); }  
+            50% { transform: translateX(-50%) translateY(-10px); }  
+        }  
+
+        .letter{
+           border-bottom: 100px;
+            box-shadow: 90% 20% 10px rgb(193, 85, 103);
+            background-color: rgb(138, 163, 163);
+            border-radius: 40px;
+            padding: 15px;
+
+        }
+    </style>   
+</head>  
+<body>  
+    <div class="container">  
+        <div class="slides">  
+            <div class="slide" data-bg="#ff4e50" onclick="nextSlide()">   
+                <img src="https://lh3.googleusercontent.com/0MNm7fbT2FbrVox0ULUwkdiwBnPmJ5EWYonYa7Z9T8Ca7nhcvEvSbRSa8uW4rNy_mgTUpYSQu1UcHMg-_bxfkHcS4nmoRQE9lt_xizC-4ySnnwvXvC3Qp9b-cFolyXo8kQ=w1280">  
+                <div class="text"><span style="font-size: small; text-align: right;">Just click to change next</span> <br>HI (_____) <br> Mundhuga Many More happy returns of the dayyyyy <br>Next am chapdham 🤔...</div>  
+            </div>  
+            <div class="slide" data-bg="#ff6b6b" onclick="nextSlide()">  
+                <img src="https://lh4.googleusercontent.com/2Sq81HJGv8ozGk4e5DL-1eAwo2E3VfGAsfRz-d0bXEyyYhosyNinYVyjVz2BTvEy_zgSlOf5pyL-tn3A920N4CS5m5OX6L7jwrPvVJgBVV9-IQbF7cafHpSaSbB-PXlx6w=w1280">  
+                <div class="text">You are the angel. <br>You make the world more beautiful. <br> ilantivi chapdham anukunna kani mari cringe avtundhi <br>So... vodhi lesa 🙈</div>  
+            </div>  
+            <div class="slide" data-bg="#ffad60" onclick="nextSlide()">   
+                <img src="https://lh4.googleusercontent.com/03hx0fZEPOIOwp0Mh3weuSyg8Ff3Xkj3GvtPEwfgxYoSAo7k6Y28B4D5K04kcshdwhIPgy06lu39P39DwpECPW6SkoBmose_A-KYuRZsHCNZ6xjplLuJ6m4MNU5LNxZTrw=w1280">  
+                <div class="text">appudu gurthochindhi asalu birthday wishes ela chappali? <br>(please noti tho ani matram annadhu) normal ga call chasi chapdhama but i don't have your number kadha🥲</div>  
+            </div>  
+            <div class="slide" data-bg="#4a90e2" onclick="nextSlide()">  
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT0VIJ-XxG51puWoCS4s393ScnlEbW9hXDCw&s">  
+                <div class="text">Poni normal ga story petti happy birthday chapdham anukunna😑 kani adhi em birthday wish School group lo copy-paste message la undi!   </div>  
+            </div>  
+            <div class="slide" data-bg="#50b3a2" onclick="nextSlide()">   
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb9xLWXag_56aR-_fylSfsFu1eTQjFJ8e1yA&s">  
+                <div class="text">poni amina poetry try chadham anukunna like <br> "Nee andham mundhu aa  chandhamama kuda nilavaledhu 🌙 "ani kani ee poetry vinagana nuvvu  <span style="font-style: oblique; font;"> "Evaru poetry raastharu ra ii rojulo?"</span> ani comment chastav ani bayam </div>  
+            </div>
+            <div class="slide" data-bg="#374785" onclick="nextSlide()">   
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpnaXnk16aZEzZgdj4JcYWFpaNCJ6kIjlL5Q&s">  
+                <div class="text">ee Poetry radham anukunna time lo naku oka doubt vachindhi andhuku andharu andham anagana aa chandhruni talustaru? <br> Yes nilaga ninu kuda alochincha tarwatha naki oka vishayam artham aindhi <br><span style="font-size: x-large;">  "Naa time waste aindhi ani"</span></div>  
+            </div>   
+            <div class="slide" data-bg="#ffcc5c" onclick="nextSlide()">  
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ42X8tSF2ysb-vHMj3saq_42xCu7KA_fpMQ&s">  
+                <div class="text">Back to the topic...Apuda oka idea vachidhi we are engineers 👨‍💻 kadha normal and simple ga em cheyylem okavela chasina andhulo logic and creativity undali <br>So ee slide show lo neetho matladatam better anipinchindhi</div>  
+            </div>  
+            <div class="slide" data-bg="#fc913a" onclick="nextSlide()">   
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsXuCTAwfVPJY6m7aNy5smDeIjXS6KUOSb_Q&s">  
+                <div class="text">Oka Small Doubt 🤔<br>Neeku eppudu most special birthday gift vachindha?<br>(And no… cake and chocolates count avavu!)Nuvvu ee question ki answer cheyyaka mundu… Think about it! May be… this slideshow is your special gift! 😉 (If not… dhairyam ga cheppu… next year full cinematic level lo plan chedham! 🎥🎬)
+                    </div>  
+            </div>   
+            <div class="slide" data-bg="#ffa07a" onclick="nextSlide()">   
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3hqky-KUTXP74YfrLvTL2xuXlE697e561WA&s">  
+                <div style="margin: 0px;" class="text">Birthday Rule Book 📜<br>
+
+                    📢 Official Birthday Rules (Marchipokandi!) <br>
+                    
+                    📌 Rule 1 – Ee slideshow lo niku nachina part anto reply lo chappali.😊 <br>
+                    📌 Rule 2–Birthday girl should enjoy, no tension! 🥳 <br>
+                    📌 Rule 3 – Ee slideshow chusinaka oka reply mandatory! 😏<br>
+                    
+                    Rule violation ayithe… <br>
+                    🔴 Punishment:  Party ivvali 🥳😂</div>  
+            </div>  
+            <div class="slide" data-bg="##ff4e50" onclick="nextSlide()">   
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYYLK1kmmBknfybNoiwq6dCNg3m3I5cboSHA&s">  
+                <div class="text">Avunu! Neeku ee slideshow nachinda? 🤔<br>
+                    if(✔ Yes – “Thank youuuu! Mii anubuthini (+91 7981494758) ikkada telapagalaru🙂”)
+                    elseif(✔ No – “Sare… next year full feature film release chesthamu! 🎬”)
+                    else(✔ “Idhi chala over anipinchindhi!” – “Konchem adjust cheskondi madam… engineering creativity anedhi unstoppable! 🚀”)
+                    </div>  
+            </div>  
+            <div class="slide" data-bg="#E57373" onclick="nextSlide()">
+                <div class="symbol" style="font-size: 100px; animation: bounce 2s infinite; margin-left: 350px;" >🎂  🎂  </div>  
+                <div class="text">Jokes apart <br> On this special day i just want to tell you one thing that life is too short so 💛 Keep shining and keep smiling… and enjoy every movement in life....</div>  
+                <button class="replay-btn" id="replay-btn" onclick="replay(event)">Replay</button>  
+                <div class="letter">    "Dear [Name],<br> ippati varaku text chadivi paina unna nii pics chudaledhu anukunta andhukosama  ii REPLAY BUTTON >>>><br>malli rewine chasi chusuko <BYE class="">BYE...</BYE><br><span > <span style="font-size: xx-large; color: black;">Once again </span><h2 style="font-style: italic; color: rgba(157, 9, 9, 0.763); margin-top: 10px;">"Happy Birthday,Superstar ⭐"</h2> </span> </div>  
+            </div> 
+            <!-- <div class="firework-container">
+                <div class="firework left-firework"></div>
+                <div class="firework right-firework"></div>
+            </div> -->
+             
+        </div>  
+    </div>  
+
+    <script>  
+        let index = 0;  
+        const slides = document.querySelector('.slides');  
+        const body = document.body;  
+        const replayBtn = document.querySelector('.replay-btn');  
+        const letter = document.querySelector('.letter');  
+
+        function nextSlide() {   
+            if (index < slides.children.length - 1) {  
+                index++;   
+            }  
+
+            slides.style.transform = `translateX(-${index * 100 / slides.children.length}%)`;  
+            body.style.background = document.querySelectorAll('.slide')[index].dataset.bg;  
+
+            // Show replay button and letter only on the last slide  
+            if (index === slides.children.length - 1) {   
+                replayBtn.style.display = 'block';  
+                letter.style.display = 'block';  
+            } else {  
+                replayBtn.style.display = 'none';  
+                letter.style.display = 'none';  
+            }  
+        } 
+        function randomizeFireworks() {
+    const fireworks = document.querySelectorAll('.firework');
+    fireworks.forEach(firework => {
+        firework.style.top = Math.random() * 80 + "%";
+    });
+}
+
+setInterval(randomizeFireworks, 1500);
+
+        function replay(event) {  
+            event.stopPropagation(); // Prevent triggering nextSlide  
+            index = 0;   
+            slides.style.transform = `translateX(0%)`;  
+            body.style.background = document.querySelectorAll('.slide')[0].dataset.bg;  
+            replayBtn.style.display = 'none';  
+            letter.style.display = 'none';  
+        }  
+
+
+    </script>  
+</body>  
+</html>
